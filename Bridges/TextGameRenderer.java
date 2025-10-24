@@ -27,12 +27,22 @@ public class TextGameRenderer implements IGameRenderer {
     @Override
     public String renderPowerUp(PowerUp powerUp) {
         String icon;
+
         switch (powerUp.getType()) {
-            case BombUp -> icon = "Bomb";
-            case RangeUp -> icon = "Range";
-            case SpeedUp -> icon = "Speed";
-            default -> icon = "?";
+            case BombUp:  
+                icon = "Bomb";
+                break;
+            case RangeUp:
+                icon = "Range";
+                break;
+            case SpeedUp:
+                icon = "Speed";
+                break;
+            default:
+                icon = "?";
+                break;
         }
+
         return String.format("%s PowerUp %s at (%d,%d)",
                 icon, powerUp.getType(), powerUp.getX(), powerUp.getY());
     }

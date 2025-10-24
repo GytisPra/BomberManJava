@@ -22,7 +22,8 @@ public final class GameLogger {
     private final ConcurrentLinkedQueue<LogEntry> logQueue = new ConcurrentLinkedQueue<>();
     private final int maxLogEntries = 1000;
 
-    private GameLogger() {}
+    private GameLogger() {
+    }
 
     public static synchronized GameLogger getInstance() {
         if (instance == null) {
@@ -59,14 +60,24 @@ public final class GameLogger {
             logQueue.poll();
         }
 
-        String colorCode = switch (level) {
-            case ERROR -> "\u001B[31m";   // Red
-            case WARNING -> "\u001B[33m"; // Yellow
-            case INFO -> "\u001B[32m";    // Green
-            default -> "\u001B[0m";       // Default
-        };
+        String colorCode;
+        switch (level) {
+            case ERROR:
+                colorCode = "\u001B[31m";
+                break;
+            case WARNING:
+                colorCode = "\u001B[33m";
+                break;
+            case INFO:
+                colorCode = "\u001B[32m";
+                break;
+            default:
+                colorCode = "\u001B[0m";
+                break;
+        }
 
-        System.out.println(colorCode + String.format("[%tT] [%s] [%s] %s", entry.timestamp, level, category, message) + "\u001B[0m");
+        System.out.println(colorCode + String.format("[%tT] [%s] [%s] %s", entry.timestamp, level, category, message)
+                + "\u001B[0m");
     }
 
     public List<String> getRecentLogs(int count) {

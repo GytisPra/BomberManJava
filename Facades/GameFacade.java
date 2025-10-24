@@ -64,12 +64,23 @@ public class GameFacade implements IGameFacade {
         ICommand command;
 
         switch (action) {
-            case MoveUp -> command = new MovePlayerCommand(gameService, roomId, playerId, 0, -1);
-            case MoveDown -> command = new MovePlayerCommand(gameService, roomId, playerId, 0, 1);
-            case MoveLeft -> command = new MovePlayerCommand(gameService, roomId, playerId, -1, 0);
-            case MoveRight -> command = new MovePlayerCommand(gameService, roomId, playerId, 1, 0);
-            case PlaceBomb -> command = new PlaceBombCommand(gameService, roomId, playerId);
-            default -> throw new IllegalArgumentException("Invalid action");
+            case MoveUp:
+                command = new MovePlayerCommand(gameService, roomId, playerId, 0, -1);
+                break;
+            case MoveDown:
+                command = new MovePlayerCommand(gameService, roomId, playerId, 0, 1);
+                break;
+            case MoveLeft:
+                command = new MovePlayerCommand(gameService, roomId, playerId, -1, 0);
+                break;
+            case MoveRight:
+                command = new MovePlayerCommand(gameService, roomId, playerId, 1, 0);
+                break;
+            case PlaceBomb:
+                command = new PlaceBombCommand(gameService, roomId, playerId);
+                break;
+            default:
+                throw new IllegalArgumentException("Invalid action");
         }
 
         return commandHandler.handleAsync(command)

@@ -10,8 +10,8 @@ import Models.Player;
 
 public class PrototypeManager
 {
-    private final Map<String, PlayerPrototype> playerPrototypes = new HashMap<>();
-    private final Map<String, GameBoardPrototype> boardPrototypes = new HashMap<>();
+    private final Map<String, PlayerPrototype> playerPrototypes = new HashMap<String, PlayerPrototype>();
+    private final Map<String, GameBoardPrototype> boardPrototypes = new HashMap<String, GameBoardPrototype>();
 
     // -----------------------
     // Register
