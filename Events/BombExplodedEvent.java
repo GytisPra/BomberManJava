@@ -15,8 +15,14 @@ public class BombExplodedEvent implements IGameEvent {
     private LocalDateTime timestamp = LocalDateTime.now();
 
     // --- Getters and Setters ---
+    @Override
     public String getRoomId() {
         return roomId;
+    }
+
+    @Override
+    public LocalDateTime getTimestamp() {
+        return timestamp;
     }
 
     public void setRoomId(String roomId) {
@@ -37,10 +43,6 @@ public class BombExplodedEvent implements IGameEvent {
 
     public void setExplosions(List<Explosion> explosions) {
         this.explosions = explosions;
-    }
-
-    public LocalDateTime getTimestamp() {
-        return timestamp;
     }
 
     public void setTimestamp(LocalDateTime timestamp) {

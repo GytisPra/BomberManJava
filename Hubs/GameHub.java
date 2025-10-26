@@ -3,9 +3,9 @@
 
 package Hubs;
 
-// import Facades.*;
-// import Services.IGameService;
-// import Singletons.GameLogger;
+import Facades.*;
+import Services.IGameService;
+import Singletons.GameLogger;
 // import Models.GameRoom;
 // import Models.Player;
 // import Bridges.IGameRenderer;
@@ -21,14 +21,15 @@ package Hubs;
 // import java.util.List;
 // import java.util.stream.Collectors;
 
-public class GameHub {}
+public class GameHub {
 
-//     private final IGameFacade gameFacade;
-//     private final IGameService gameService;
-//     private final GameLogger logger = GameLogger.getInstance();
+    private final IGameFacade gameFacade;
+    private final IGameService gameService;
+    private final GameLogger logger = GameLogger.getInstance();
+    private String connectionId;
+}
 
-//     // Assuming a WebSocket-like context
-//     private String connectionId;
+//     
 //     private HubClients clients;
 //     private HubGroups groups;
 

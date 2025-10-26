@@ -6,6 +6,7 @@ import Models.PowerUp;
 
 public class ClassicThemeFactory implements IGameThemeFactory {
 
+    @Override
     public PowerUp createPowerUp(int x, int y, PowerUpType type) {
         var powerUp = new PowerUp();
 
