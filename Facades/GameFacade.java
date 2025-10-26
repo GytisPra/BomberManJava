@@ -15,7 +15,7 @@ import Commands.MovePlayerCommand;
 import Commands.PlaceBombCommand;
 
 import Factories.IGameFactory;
-import Events.IEventPublisher;
+// import Events.IEventPublisher;
 
 public class GameFacade implements IGameFacade {
 
@@ -27,8 +27,9 @@ public class GameFacade implements IGameFacade {
     public GameFacade(
             IGameService gameService,
             ICommandHandler commandHandler,
-            IGameFactory gameFactory,
-            IEventPublisher eventPublisher) {
+            IGameFactory gameFactory
+            // IEventPublisher eventPublisher
+            ) {
         this.gameService = gameService;
         this.commandHandler = commandHandler;
         this.gameFactory = gameFactory;

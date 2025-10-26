@@ -5,7 +5,7 @@ import java.util.concurrent.*;
 import java.util.concurrent.CompletableFuture;
 
 import Models.*;
-import Events.*;
+// import Events.*;
 import Factories.*;
 import Decorators.*;
 import Prototypes.*;
@@ -29,14 +29,14 @@ public class GameService implements IGameService {
     private final IGameDataService gameDataService;
     private final IPlayerBuilder playerBuilder;
     private final IGameRoomBuilder gameRoomBuilder;
-    private final IEventPublisher eventPublisher;
+    // private final IEventPublisher eventPublisher;
     private final GameConfiguration config = GameConfiguration.getInstance();
     private final GameStatistics statistics = GameStatistics.getInstance();
     private final GameLogger logger = GameLogger.getInstance();
 
     public GameService(
         IGameFactory gameFactory,
-        IEventPublisher eventPublisher,
+        // IEventPublisher eventPublisher,
         // IHubContext<GameHub> hubContext,
         PrototypeManager prototypeManager,
         IGameDataService gameDataService,
@@ -44,7 +44,7 @@ public class GameService implements IGameService {
         IGameRoomBuilder gameRoomBuilder
     ) {
         this.gameFactory = gameFactory;
-        this.eventPublisher = eventPublisher;
+        // this.eventPublisher = eventPublisher;
         // this.hubContext = hubContext;
         this.prototypeManager = prototypeManager;
         this.gameDataService = gameDataService;
