@@ -1,12 +1,9 @@
 package Factories;
 
-import Models.GameBoard;
-import Models.GameRoom;
-import Models.Player;
+import Models.*;
 
-public interface IGameFactory
-{
+public interface IGameFactory {
     GameRoom createGameRoom(String roomId);
-    Player createPlayer(String id, String name);
+    Player createPlayer(String playerId, String playerName);
     GameBoard createGameBoard();
 }

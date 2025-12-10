@@ -1,7 +1,7 @@
 package Enums;
 
 public enum CellType {
-	Empty,
-	Wall,
-	DestructibleWall
+    Empty,
+    Wall,
+    DestructibleWall
 }

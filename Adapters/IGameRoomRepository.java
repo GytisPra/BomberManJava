@@ -1,9 +1,8 @@
 package Adapters;
 
 import java.util.concurrent.CompletableFuture;
-import Models.GameRoom;
 
 public interface IGameRoomRepository {
-    CompletableFuture<GameRoom> getRoomAsync(String roomId);
-    CompletableFuture<Void> saveRoomAsync(GameRoom room);
+    CompletableFuture<Void> saveAsync(GameRoomData roomData);
+    CompletableFuture<GameRoomData> findByIdAsync(String roomId);
 }

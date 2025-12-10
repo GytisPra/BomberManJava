@@ -9,36 +9,13 @@ public class PowerUp {
 
     public PowerUp() {}
 
-    public int getX() {
-        return x;
-    }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
-
-    public PowerUpType getType() {
-        return type;
-    }
-
-    public void setType(PowerUpType type) {
-        this.type = type;
-    }
+    public int getX() { return 0; }
+    public void setX(int x) {}
+    public int getY() { return 0; }
+    public void setY(int y) {}
+    public PowerUpType getType() { return null; }
+    public void setType(PowerUpType type) {}
 
     @Override
-    public PowerUp clone() {
-        PowerUp p = new PowerUp();
-        p.x = this.x;
-        p.y = this.y;
-        p.type = this.type;
-        return p;
-    }
+    public PowerUp clone() { return null; }
 }

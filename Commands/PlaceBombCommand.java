@@ -1,27 +1,17 @@
 package Commands;
 
 import java.util.concurrent.CompletableFuture;
-
 import Services.IGameService;
+import Models.Bomb;
 
 public class PlaceBombCommand implements ICommand {
-    private final IGameService gameService;
-    private final String roomId;
-    private final String playerId;
+    private IGameService gameService;
+    private String roomId;
+    private String playerId;
+    private Bomb placedBomb;
 
-    public PlaceBombCommand(IGameService gameService, String roomId, String playerId) {
-        this.gameService = gameService;
-        this.roomId = roomId;
-        this.playerId = playerId;
-    }
+    public PlaceBombCommand(IGameService gameService, String roomId, String playerId) {}
 
-    @Override
-    public CompletableFuture<CommandResult> executeAsync() {
-        return gameService.placeBombAsync(roomId, playerId).thenApply(
-                success -> {
-                    CommandResult result = new CommandResult();
-                    result.setSuccess(success);
-                    return result;
-                });
-    }
+    public CompletableFuture<CommandResult> executeAsync() { return null; }
+    public CompletableFuture<CommandResult> undoAsync() { return null; }
 }

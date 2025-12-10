@@ -1,20 +1,11 @@
 package Adapters;
 
-import java.util.concurrent.*;
-import java.util.concurrent.ConcurrentHashMap;
-
-import Models.GameRoom;
+import java.util.Map;
+import java.util.concurrent.CompletableFuture;
 
 public class InMemoryGameRoomRepository implements IGameRoomRepository {
-    private final ConcurrentHashMap<String, GameRoom> rooms = new ConcurrentHashMap<>();
+    private Map<String, GameRoomData> storage;
 
-    @Override
-    public CompletableFuture<GameRoom> getRoomAsync(String roomId) {
-        return CompletableFuture.supplyAsync(() -> rooms.get(roomId));
-    }
-
-    @Override
-    public CompletableFuture<Void> saveRoomAsync(GameRoom room) {
-        return CompletableFuture.runAsync(() -> rooms.put(room.getId(), room));
-    }
+    public CompletableFuture<Void> saveAsync(GameRoomData roomData) { return null; }
+    public CompletableFuture<GameRoomData> findByIdAsync(String roomId) { return null; }
 }

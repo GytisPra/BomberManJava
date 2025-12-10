@@ -1,15 +1,10 @@
 package Factories;
 
-import Enums.PowerUpType;
-import Models.Explosion;
-import Models.PowerUp;
+import Models.*;
 
 public interface IGameThemeFactory {
-    PowerUp createPowerUp(int x, int y, PowerUpType type);
-
+    Bomb createBomb(int x, int y, String playerId, int range);
+    PowerUp createPowerUp(int x, int y, Enums.PowerUpType type);
     Explosion createExplosion(int x, int y);
-
     String getThemeName();
-
-    String getThemeColor();
 }

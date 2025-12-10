@@ -2,7 +2,6 @@ package Observers;
 
 import Events.IGameEvent;
 
-public interface IGameObserver
-{
-    void onGameEvent(IGameEvent gameEvent);
+public interface IGameObserver {
+    void onGameEvent(IGameEvent event);
 }

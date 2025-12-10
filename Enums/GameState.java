@@ -1,7 +1,7 @@
 package Enums;
 
 public enum GameState {
-	Waiting,
-	Playing,
-	Finished
+    Waiting,
+    Playing,
+    Finished
 }

@@ -3,11 +3,10 @@ package States;
 import Enums.GameState;
 import Models.GameRoom;
 
-public abstract interface GameStateBase
-{
-    public abstract Boolean canJoinPlayer(GameRoom room);
-    public abstract Boolean canStartGame(GameRoom room);
-    public abstract Boolean canMovePlayer(GameRoom room);
-    public abstract Boolean canPlaceBomb(GameRoom room);
-    public abstract GameState getStateType();
+public interface GameStateBase {
+    Boolean canJoinPlayer(GameRoom room);
+    Boolean canStartGame(GameRoom room);
+    Boolean canMovePlayer(GameRoom room);
+    Boolean canPlaceBomb(GameRoom room);
+    GameState getStateType();
 }

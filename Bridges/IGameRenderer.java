@@ -2,11 +2,10 @@ package Bridges;
 
 import Models.*;
 
-public interface IGameRenderer
-{
+public interface IGameRenderer {
+    String renderBoard(GameBoard board);
     String renderPlayer(Player player);
     String renderBomb(Bomb bomb);
-    String renderExplosion(Explosion explosion);
     String renderPowerUp(PowerUp powerUp);
-    String renderGameBoard(GameBoard board);
+    String renderExplosion(Explosion explosion);
 }

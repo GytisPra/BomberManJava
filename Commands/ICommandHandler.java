@@ -2,7 +2,6 @@ package Commands;
 
 import java.util.concurrent.CompletableFuture;
 
-public interface ICommandHandler
-{
+public interface ICommandHandler {
     CompletableFuture<CommandResult> handleAsync(ICommand command);
 }

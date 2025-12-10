@@ -1,91 +1,31 @@
 package Models;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
-
 import Enums.GameState;
 import States.*;
 
 public class GameRoom {
 
-    private String id = UUID.randomUUID().toString();
-    private List<Player> players = new ArrayList<>();
-    private GameState state = GameState.Waiting;
-    private GameBoard board = new GameBoard();
-    private LocalDateTime lastUpdate = LocalDateTime.now();
-    private GameStateBase stateHandler = new WaitingState();
+    private String id;
+    private List<Player> players;
+    private GameState state;
+    private GameBoard board;
+    private LocalDateTime lastUpdate;
+    private GameStateBase stateHandler;
 
-    // -----------------------
-    // Getters and Setters
-    // -----------------------
-    
-    public String getId() {
-        return id;
-    }
+    public String getId() { return null; }
+    public void setId(String id) {}
+    public List<Player> getPlayers() { return null; }
+    public void setPlayers(List<Player> players) {}
+    public GameState getState() { return null; }
+    public void setState(GameState state) {}
+    public GameBoard getBoard() { return null; }
+    public void setBoard(GameBoard board) {}
+    public LocalDateTime getLastUpdate() { return null; }
+    public void setLastUpdate(LocalDateTime lastUpdate) {}
+    public GameStateBase getStateHandler() { return null; }
+    public void setStateHandler(GameStateBase stateHandler) {}
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public List<Player> getPlayers() {
-        return players;
-    }
-
-    public void setPlayers(List<Player> players) {
-        this.players = players;
-    }
-
-    public GameState getState() {
-        return state;
-    }
-
-    public void setState(GameState state) {
-        this.state = state;
-    }
-
-    public GameBoard getBoard() {
-        return board;
-    }
-
-    public void setBoard(GameBoard board) {
-        this.board = board;
-    }
-
-    public LocalDateTime getLastUpdate() {
-        return lastUpdate;
-    }
-
-    public void setLastUpdate(LocalDateTime lastUpdate) {
-        this.lastUpdate = lastUpdate;
-    }
-
-    public GameStateBase getStateHandler() {
-        return stateHandler;
-    }
-
-    public void setStateHandler(GameStateBase stateHandler) {
-        this.stateHandler = stateHandler;
-    }
-
-    // -----------------------
-    // Methods
-    // -----------------------
-
-    public void updateStateHandler() {
-        switch (state) {
-            case Waiting:
-                stateHandler = new WaitingState();
-                break;
-            case Playing:
-                stateHandler = new PlayingState();
-                break;
-            case Finished:
-                stateHandler = new FinishedState();
-                break;
-            default:
-                stateHandler = new WaitingState();
-        }
-    }
+    public void updateStateHandler() {}
 }

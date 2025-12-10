@@ -1,7 +1,7 @@
 package Enums;
 
 public enum PowerUpType {
-	BombUp,
-	RangeUp,
-	SpeedUp
+    BombUp,
+    RangeUp,
+    SpeedUp
 }
